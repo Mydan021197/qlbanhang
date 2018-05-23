@@ -1,0 +1,55 @@
+﻿@model QLBanHang.Models.KhachHang
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_LayoutTrangChu.cshtml";
+}
+<div style=" height:600px; background-color:#ffd9d9">
+<h2 style="text-align:center"> Đăng Kí Thành Viên</h2>
+<table align="center">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td>Họ tên khách hàng: </td>
+            <td>@Html.TextBox("Hoten") </td>
+            @ViewData["Loi1"]
+        </tr>
+        <tr style="height:40px">
+            <td>Tên Đăng Nhập: </td>
+            <td>@Html.TextBox("username") </td>
+            @ViewData["Loi2"]
+        </tr>
+        <tr style="height:40px">
+            <td>Mật Khẩu: </td>
+            <td>@Html.TextBox("pass") </td>
+            @ViewData["Loi3"]
+        </tr>
+        <tr style="height:40px">
+            <td>Nhập Lại Mật Khẩu </td>
+            <td>@Html.TextBox("confirm pass") </td>
+            @ViewData["Loi4"]
+        </tr>
+
+        <tr style="height:40px">
+            <td>Điện Thoại : </td>
+            <td>@Html.TextBox("PhoneNumber") </td>
+            @ViewData["Loi5"]
+        </tr>
+   
+        <tr style="height:40px">
+            <td>Địa Chỉ : </td>
+            <td>@Html.TextBox("DiaChi") </td>
+            @ViewData["Loi7"]
+        </tr>
+
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input type="submit" value="Đăng Ký" />
+
+            </td>
+
+        </tr>
+    }
+</table>
+ </div>

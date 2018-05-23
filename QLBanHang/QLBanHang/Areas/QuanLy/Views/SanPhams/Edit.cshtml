@@ -1,0 +1,105 @@
+﻿@model QLBanHang.Models.SanPham
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/QuanLy/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "CreatePN", "NhapHangs")
+</p>
+
+  @using (Html.BeginForm("Edit", "Sanphams", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+  {
+                    @Html.AntiForgeryToken()
+
+<div class="row">
+    <div class="col-lg-8">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.HinhAnh)
+        @Html.HiddenFor(model => model.GiaBan)
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Tên Sản Phẩm : </label>
+            @Html.EditorFor(model => model.tensp, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tensp, "", new { @class = "text-danger" })
+        </div>
+
+
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Giới Tính : </label>
+
+            @Html.DropDownList("phai", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.phai, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Đơn vị Tính : </label>
+
+            @Html.EditorFor(model => model.dvt, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.dvt, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Giá Bán : </label>
+            @Html.DisplayFor(model => model.GiaBan)
+        </div>
+
+
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Hình Ảnh : </label>
+            <input type="file" name="fileupload" />
+        </div>
+
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Mô Tả : </label>
+
+            @Html.EditorFor(model => model.mota, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.mota, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Nhãn Hiệu : </label>
+
+            @Html.DropDownList("idHieu", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idHieu, "", new { @class = "text-danger" })
+        </div>
+
+
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Dung Lượng : </label>
+
+            @Html.DropDownList("idDungLuong", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idDungLuong, "", new { @class = "text-danger" })
+        </div>
+
+
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Nồng Độ: </label>
+
+            @Html.DropDownList("idNongDo", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idNongDo, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Sale: </label>
+            <div class="checkbox" style="width:20px">
+                @Html.EditorFor(model => model.Sale ) 
+                @Html.ValidationMessageFor(model => model.Sale, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+
+</div>
+                }
+
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>

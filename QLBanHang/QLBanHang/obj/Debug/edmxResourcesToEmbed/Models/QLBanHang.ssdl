@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBanHang.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="QLBanHangStoreContainer">
+    <EntitySet Name="sanphamSet" EntityType="QLBanHang.Store.sanphamSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CTPhieuNhapSet" EntityType="QLBanHang.Store.CTPhieuNhapSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhieuNhapSet" EntityType="QLBanHang.Store.PhieuNhapSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NhaPPSet" EntityType="QLBanHang.Store.NhaPPSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DungLuongSet" EntityType="QLBanHang.Store.DungLuongSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NongDoSet" EntityType="QLBanHang.Store.NongDoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NhanHieuSet" EntityType="QLBanHang.Store.NhanHieuSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CTDonMuaSet" EntityType="QLBanHang.Store.CTDonMuaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KhachHangSet" EntityType="QLBanHang.Store.KhachHangSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DonMuaSet" EntityType="QLBanHang.Store.DonMuaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="QLBanHang.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CTDonMuaSet_DonMuaSet" Association="QLBanHang.Store.FK_CTDonMuaSet_DonMuaSet">
+      <End Role="DonMua" EntitySet="DonMuaSet" />
+      <End Role="CTDonMua" EntitySet="CTDonMuaSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDonMuaSet_sanphamSet" Association="QLBanHang.Store.FK_CTDonMuaSet_sanphamSet">
+      <End Role="sanpham" EntitySet="sanphamSet" />
+      <End Role="CTDonMua" EntitySet="CTDonMuaSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTPhieuNhapSet_PhieuNhapSet" Association="QLBanHang.Store.FK_CTPhieuNhapSet_PhieuNhapSet">
+      <End Role="PhieuNhap" EntitySet="PhieuNhapSet" />
+      <End Role="CTPhieuNhap" EntitySet="CTPhieuNhapSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTPhieuNhapSet_sanphamSet" Association="QLBanHang.Store.FK_CTPhieuNhapSet_sanphamSet">
+      <End Role="sanpham" EntitySet="sanphamSet" />
+      <End Role="CTPhieuNhap" EntitySet="CTPhieuNhapSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonMuaSet_KhachHangSet" Association="QLBanHang.Store.FK_DonMuaSet_KhachHangSet">
+      <End Role="KhachHang" EntitySet="KhachHangSet" />
+      <End Role="DonMua" EntitySet="DonMuaSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sanphamSet_DungLuongSet" Association="QLBanHang.Store.FK_sanphamSet_DungLuongSet">
+      <End Role="DungLuong" EntitySet="DungLuongSet" />
+      <End Role="sanpham" EntitySet="sanphamSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sanphamSet_NongDoSet" Association="QLBanHang.Store.FK_sanphamSet_NongDoSet">
+      <End Role="NongDo" EntitySet="NongDoSet" />
+      <End Role="sanpham" EntitySet="sanphamSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sanphamSet_NhanHieuSet" Association="QLBanHang.Store.FK_sanphamSet_NhanHieuSet">
+      <End Role="NhanHieu" EntitySet="NhanHieuSet" />
+      <End Role="sanpham" EntitySet="sanphamSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuNhapSet_NhaPPSet" Association="QLBanHang.Store.FK_PhieuNhapSet_NhaPPSet">
+      <End Role="NhaPP" EntitySet="NhaPPSet" />
+      <End Role="PhieuNhap" EntitySet="PhieuNhapSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sanphamSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tensp" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="phai" Type="tinyint" Nullable="false" />
+    <Property Name="dvt" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="mota" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="idHieu" Type="int" Nullable="false" />
+    <Property Name="idDungLuong" Type="int" Nullable="false" />
+    <Property Name="idNongDo" Type="int" Nullable="false" />
+    <Property Name="DungLuongSet_Id" Type="int" Nullable="false" />
+    <Property Name="NongDoSet_Id" Type="int" Nullable="false" />
+    <Property Name="NhanHieuSet_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CTPhieuNhapSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPN" Type="int" Nullable="false" />
+    <Property Name="idSp" Type="int" Nullable="false" />
+    <Property Name="giaNhap" Type="int" Nullable="false" />
+    <Property Name="soluongNhap" Type="int" Nullable="false" />
+    <Property Name="ThanhTien" Type="int" Nullable="false" />
+    <Property Name="PhieuNhapSet_Id" Type="int" Nullable="false" />
+    <Property Name="sanphamSet_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhieuNhapSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayNhap" Type="datetime" Nullable="false" />
+    <Property Name="Tongtien" Type="int" Nullable="false" />
+    <Property Name="idNPP" Type="int" Nullable="false" />
+    <Property Name="NhaPPSet_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NhaPPSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNPP" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DungLuongSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DungTich" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NongDoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nongdo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NhanHieuSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenHieu" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CTDonMuaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idDH" Type="int" Nullable="false" />
+    <Property Name="idSp" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="ThanhTien" Type="int" Nullable="false" />
+    <Property Name="giaBan" Type="int" Nullable="false" />
+    <Property Name="DonMuaSet_Id" Type="int" Nullable="false" />
+    <Property Name="sanphamSet_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KhachHangSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hoten" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sdt" Type="int" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="phai" Type="tinyint" Nullable="false" />
+    <Property Name="tenDN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pass" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DonMuaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idKH" Type="int" Nullable="false" />
+    <Property Name="NgayMua" Type="datetime" Nullable="false" />
+    <Property Name="TongTien" Type="int" Nullable="false" />
+    <Property Name="NgayGiaoHang" Type="datetime" Nullable="false" />
+    <Property Name="ThanhToan" Type="tinyint" Nullable="false" />
+    <Property Name="GiaoHang" Type="tinyint" Nullable="false" />
+    <Property Name="KhachHangSet_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_CTDonMuaSet_DonMuaSet">
+    <End Role="DonMua" Type="QLBanHang.Store.DonMuaSet" Multiplicity="1" />
+    <End Role="CTDonMua" Type="QLBanHang.Store.CTDonMuaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonMua">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CTDonMua">
+        <PropertyRef Name="DonMuaSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDonMuaSet_sanphamSet">
+    <End Role="sanpham" Type="QLBanHang.Store.sanphamSet" Multiplicity="1" />
+    <End Role="CTDonMua" Type="QLBanHang.Store.CTDonMuaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sanpham">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CTDonMua">
+        <PropertyRef Name="sanphamSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTPhieuNhapSet_PhieuNhapSet">
+    <End Role="PhieuNhap" Type="QLBanHang.Store.PhieuNhapSet" Multiplicity="1" />
+    <End Role="CTPhieuNhap" Type="QLBanHang.Store.CTPhieuNhapSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuNhap">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CTPhieuNhap">
+        <PropertyRef Name="PhieuNhapSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTPhieuNhapSet_sanphamSet">
+    <End Role="sanpham" Type="QLBanHang.Store.sanphamSet" Multiplicity="1" />
+    <End Role="CTPhieuNhap" Type="QLBanHang.Store.CTPhieuNhapSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sanpham">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CTPhieuNhap">
+        <PropertyRef Name="sanphamSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonMuaSet_KhachHangSet">
+    <End Role="KhachHang" Type="QLBanHang.Store.KhachHangSet" Multiplicity="1" />
+    <End Role="DonMua" Type="QLBanHang.Store.DonMuaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DonMua">
+        <PropertyRef Name="KhachHangSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sanphamSet_DungLuongSet">
+    <End Role="DungLuong" Type="QLBanHang.Store.DungLuongSet" Multiplicity="1" />
+    <End Role="sanpham" Type="QLBanHang.Store.sanphamSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DungLuong">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="sanpham">
+        <PropertyRef Name="DungLuongSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sanphamSet_NongDoSet">
+    <End Role="NongDo" Type="QLBanHang.Store.NongDoSet" Multiplicity="1" />
+    <End Role="sanpham" Type="QLBanHang.Store.sanphamSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NongDo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="sanpham">
+        <PropertyRef Name="NongDoSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sanphamSet_NhanHieuSet">
+    <End Role="NhanHieu" Type="QLBanHang.Store.NhanHieuSet" Multiplicity="1" />
+    <End Role="sanpham" Type="QLBanHang.Store.sanphamSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanHieu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="sanpham">
+        <PropertyRef Name="NhanHieuSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuNhapSet_NhaPPSet">
+    <End Role="NhaPP" Type="QLBanHang.Store.NhaPPSet" Multiplicity="1" />
+    <End Role="PhieuNhap" Type="QLBanHang.Store.PhieuNhapSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaPP">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhieuNhap">
+        <PropertyRef Name="NhaPPSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

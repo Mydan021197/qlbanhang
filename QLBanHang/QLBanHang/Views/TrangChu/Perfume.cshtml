@@ -1,0 +1,105 @@
+﻿@model IEnumerable<QLBanHang.Models.SanPham>
+@{
+    ViewBag.Title = "Perfume";
+    Layout = "~/Views/Shared/_LayoutTrangChu.cshtml";
+}
+<style>
+    .box1 > h2, form#cart table th, #cart table tbody tr:hover td {
+        background: #ffebeb;
+    }
+
+    #sidebar .box1 {
+        width: 250px;
+        margin-top: 25px;
+        border: double;
+    }
+
+    #sidebar .box1 h2 {
+        margin: 0;
+        text-align: center;
+    }
+    #items .box1 {
+        width: 238px;
+    }
+
+    #sidebar .box1 ul li a, #sidebar .news > ul li a {
+        color: #b9315a;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+</style>
+
+<div id="main" margin-top:10px>
+    <div >
+        <img src="~/Asset/images/anhbiaaaa.jpg"  height="320" width="1060" style="padding-left:10px; margin-top:10px" />
+      </div>
+    <div id="items">
+        <ul>
+            @foreach (var nuochoa in Model)
+            {
+                <li class="box">
+                    <a  style ="text-decoration: none" href="@Url.Action("Details","TrangChu", new { id = nuochoa.Id  }) ">
+                        <img src="~/Asset/images/@nuochoa.HinhAnh" alt="Img" height="200" width="210">
+                        <p> @nuochoa.tensp</p>
+                        <br />
+                        <span class="price">@nuochoa.GiaBan  VND</span>
+                    </a>
+
+                    <a class="btnCart" href="@Url.Action("Themgiohang","GioHang",new { @idSP = nuochoa.Id, @strURL = Request.Url.ToString()})">Order Now</a>
+                    
+                </li>
+            }
+
+
+        </ul>
+    </div>
+    </div>
+<div id="sidebar" >
+    <ul class="menu" style=" padding-top: 20px; margin-top:10px; border:double; padding-bottom: 30px; margin-bottom:40px; background-color:#ffebeb">
+        <li>
+            <span>Nữ</span>
+            <ul>
+                <li>
+                    <a href="@Url.Action("BestSeller","TrangChu")">Fullseal</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("BestSeller","TrangChu")">Mini</a>
+                </li>
+
+            </ul>
+        </li>
+        <li>
+            <span>Nam</span>
+            <ul>
+                <li>
+                    <a href="@Url.Action("BestSeller","TrangChu")">Fullseal</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("BestSeller","TrangChu")">Mini</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="@Url.Action("BestSeller","TrangChu")">Unisex</a>
+        </li>
+        <li>
+            <a href="@Url.Action("BestSeller","TrangChu")">Gift set</a>
+            <br>
+        </li>
+    </ul>
+    <div class="box1">
+        <h2>Mac Cosmectics</h2>
+        <ul>
+            <li>
+                <a href="#"> <img src="~/Asset/images/Mac2.jpg" alt="Img" height="111" width="150"><br>Mac Cosmetics</a>
+            </li>
+            <li>
+                <a href="#"> <img src="~/Asset/images/PhanMac.jpg" alt="Img" height="111" width="150"><br>Prep + Prime Transparent Finishing Powder/Pressed</a>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+<br>

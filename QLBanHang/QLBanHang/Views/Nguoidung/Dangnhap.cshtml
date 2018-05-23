@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html style="background-color: white">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Asset/css/login.css" rel="stylesheet" />
+    <script src="~/Asset/js/login.js"></script>
+</head>
+<body style="background-color: #f8d8d8; margin-top: 100px; padding-top: 20px; padding-bottom: 20px" >
+    <div id="idTest" class="container" onchange="getID()">
+        <section id="content">
+            @using (Html.BeginForm())
+            {@Html.ValidationSummary(true)
+            <form action="">
+                <h1> Login Form </h1>
+                <h5 style=" color: red"> @ViewBag.ThongBao </h5>
+                <div>
+                    <input type="text" name="username" placeholder="Username" required="" id="username" value="cname" />
+                    @ViewData["Loi1"]
+                </div>
+                <div>
+                    <input type="password" name="pass" placeholder="Password" required="" id="password" value="cvalue" />
+                    @ViewData["Loi2"]
+                </div>
+                <div>
+                    <input type="submit" value="Log in" />
+                    <a href="#">Lost your password?</a>
+                    <p>@Html.ActionLink("Đăng Ký", "Dangky", "Nguoidung")</p>
+                </div>
+            </form><!-- form -->
+        }
+            <div class="button">
+                <a href="#"> _Customer_ </a>
+            </div><!-- button -->
+
+        </section><!-- content -->
+    </div><!-- container -->
+</body>
+</html>
+
+

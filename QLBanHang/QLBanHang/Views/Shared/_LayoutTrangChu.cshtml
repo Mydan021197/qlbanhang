@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cửa Hàng Phân Phối Nước Hoa Mandy_Perfume</title>
+    <link rel="stylesheet" href="~/Asset/css/style.css" type="text/css">
+    <link rel="stylesheet" href="~/Asset/css/slide.css" type="text/css">
+
+    <link href="~/cssAutocomplete/jquery-ui.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="page">
+
+        <div id="header" style=" background:white">
+
+            <div id="top-left" style="margin-top: 5px ">
+
+                <ul>
+                    <li> info@mandyperfumee.com</li>
+                    <li>|</li>
+                    <li> 0974. 8676 . 80</li>
+                </ul>
+                <div id="logo" style="padding-left:-50px">
+                    <img style="width: 180px; height: 130px; margin-left: 100px" src="~/Asset/images/logo5.jpg" />
+                </div>
+
+            </div>
+
+            <div id="top-right" style="margin-top:20px; margin-left:20px">
+
+                <ul>
+
+                    <li style="margin:-4px"><a href="#"><img src="~/Asset/images/zalo-min.png"></a></li>
+                    <li>|</li>
+                    <li><a href="#"><img src="~/Asset/images/if_Instagram_345416.png" style="width:33px; height:33px; margin:-4px 0 0 0;"></a></li>
+                    <li>|</li>
+                    <li><a href="#"><img src="~/Asset/images/if_social-facebook_299104.png"></a></li>
+                    <li>|</li>
+                    <li><a style="text-decoration-line: none" href="@Url.Action("Dangky","Nguoidung")"> Đăng Ký </a></li>
+                    <li>|</li>
+                    <li><a style="text-decoration-line: none" href="@Url.Action("Dangnhap","Nguoidung")"> Đăng Nhập </a></li>
+                    <li>|</li>
+                    <li style="padding-bottom:30px"> @Html.Action("GiohangPartial", "GioHang")</li>
+                    <li>|</li>
+                    <li>
+                        <input type="text" value="" placeholder="   Chọn Nhãn Hiệu.." />
+
+                        <img src="~/Asset/images/if_icon-111-search_314478.png" />
+
+                    </li>
+                    <li>|</li>
+                    <li>
+                        @using (Html.BeginForm("Perfume", "TrangChu", FormMethod.Get, new { @class = "navbar-form navbar-right", role = "search", id = "search-form" }))
+        {
+
+                <input style="width:200px" type="text" class="form-control" name="SearchTerm" placeholder=" Tìm Tên Nước Hoa...." value="@ViewBag.SearchTerm" @*id="search"*@ id="search-box">
+                <a><img src="~/Asset/images/if_icon-111-search_314478.png" /></a>
+                @*<span class="input-group-btn">
+       <a id="xemttSP" ><img src="~/Asset/images/if_icon-111-search_314478.png" /></a>
+    </span>*@
+
+}
+                        <!-- /input-group -->
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+
+            <div id="navigation">
+                <p>
+                    <br />
+                </p>
+                <ul>
+                    <li class="selected">
+                        <a href="#">@Html.ActionLink("Home", "Index", "TrangChu")</a>
+                    </li>
+
+                    <li>
+                        <a href="#">@Html.ActionLink("Perfume", "Perfume", "TrangChu")</a>
+                    </li>
+                    <li>
+                        <a href="#">@Html.ActionLink("Best Seller", "BestSeller", "TrangChu") </a>
+                    </li>
+                   
+                    <li>
+                        <a href="#"> @Html.ActionLink("About", "about", "TrangChu")</a>
+                    </li>
+                    <li>
+                        <a href="#"> Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="contents">
+
+            <div>
+                @RenderBody()
+            </div>
+
+        </div>
+        <div id="footer">
+            <ul class="navigation">
+                <li class="selected">
+                    <a href="#">@Html.ActionLink("Home", "Index", "TrangChu")</a>
+                </li>
+
+                <li>
+                    <a href="#">@Html.ActionLink("Perfume", "Perfume", "TrangChu")</a>
+                </li>
+                <li>
+                    <a href="cosmetic.html"> Best Seller </a>
+                </li>
+                <li>
+                    <a href="sale.html"> Sale </a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <div id="footnote">
+                <div class="sidebar">
+                    <div id="connect" class="box">
+                        <a href="https://www.facebook.com/pg/mandyperfum/community/" target="_blank" class="facebook"></a> <a href="" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a> <a href="http://freewebsitetemplates.com/go/youtube/" target="_blank" class="vimeo"></a>
+                    </div>
+                </div>
+                <br>
+                <p> © M.a.n.d.y_P.e.r.f.u.m.e_S.t.o.r.e 2017 © </p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Asset/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/ScriptPage/autocomplete/jquery-ui.js"></script>    
+    <script src="~/ScriptPage/Main.js"></script>
+    <script>
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }</script>
+</body>
+</html>

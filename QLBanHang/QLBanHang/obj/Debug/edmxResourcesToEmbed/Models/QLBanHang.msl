@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLBanHangStoreContainer" CdmEntityContainer="QLBanHangContainer">
+    <EntitySetMapping Name="sanphamSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.sanpham)">
+        <MappingFragment StoreEntitySet="sanphamSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="phai" ColumnName="phai" />
+          <ScalarProperty Name="dvt" ColumnName="dvt" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="idHieu" ColumnName="idHieu" />
+          <ScalarProperty Name="idDungLuong" ColumnName="idDungLuong" />
+          <ScalarProperty Name="idNongDo" ColumnName="idNongDo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTPhieuNhapSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.CTPhieuNhap)">
+        <MappingFragment StoreEntitySet="CTPhieuNhapSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="idPN" ColumnName="idPN" />
+          <ScalarProperty Name="idSp" ColumnName="idSp" />
+          <ScalarProperty Name="giaNhap" ColumnName="giaNhap" />
+          <ScalarProperty Name="soluongNhap" ColumnName="soluongNhap" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuNhapSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.PhieuNhap)">
+        <MappingFragment StoreEntitySet="PhieuNhapSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
+          <ScalarProperty Name="idNPP" ColumnName="idNPP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaPPSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.NhaPP)">
+        <MappingFragment StoreEntitySet="NhaPPSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenNPP" ColumnName="TenNPP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DungLuongSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.DungLuong)">
+        <MappingFragment StoreEntitySet="DungLuongSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DungTich" ColumnName="DungTich" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NongDoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.NongDo)">
+        <MappingFragment StoreEntitySet="NongDoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nongdo" ColumnName="nongdo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanHieuSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.NhanHieu)">
+        <MappingFragment StoreEntitySet="NhanHieuSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenHieu" ColumnName="TenHieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTDonMuaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.CTDonMua)">
+        <MappingFragment StoreEntitySet="CTDonMuaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="idDH" ColumnName="idDH" />
+          <ScalarProperty Name="idSp" ColumnName="idSp" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="giaBan" ColumnName="giaBan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.KhachHang)">
+        <MappingFragment StoreEntitySet="KhachHangSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="phai" ColumnName="phai" />
+          <ScalarProperty Name="tenDN" ColumnName="tenDN" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonMuaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.DonMua)">
+        <MappingFragment StoreEntitySet="DonMuaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="idKH" ColumnName="idKH" />
+          <ScalarProperty Name="NgayMua" ColumnName="NgayMua" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="NgayGiaoHang" ColumnName="NgayGiaoHang" />
+          <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
+          <ScalarProperty Name="GiaoHang" ColumnName="GiaoHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(QLBanHang.sysdiagrams)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_CTDonMuaSet_DonMuaSet" TypeName="QLBanHang.FK_CTDonMuaSet_DonMuaSet" StoreEntitySet="CTDonMuaSet">
+      <EndProperty Name="DonMua">
+        <ScalarProperty Name="Id" ColumnName="DonMuaSet_Id" />
+      </EndProperty>
+      <EndProperty Name="CTDonMua">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CTDonMuaSet_sanphamSet" TypeName="QLBanHang.FK_CTDonMuaSet_sanphamSet" StoreEntitySet="CTDonMuaSet">
+      <EndProperty Name="sanpham">
+        <ScalarProperty Name="Id" ColumnName="sanphamSet_Id" />
+      </EndProperty>
+      <EndProperty Name="CTDonMua">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CTPhieuNhapSet_PhieuNhapSet" TypeName="QLBanHang.FK_CTPhieuNhapSet_PhieuNhapSet" StoreEntitySet="CTPhieuNhapSet">
+      <EndProperty Name="PhieuNhap">
+        <ScalarProperty Name="Id" ColumnName="PhieuNhapSet_Id" />
+      </EndProperty>
+      <EndProperty Name="CTPhieuNhap">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CTPhieuNhapSet_sanphamSet" TypeName="QLBanHang.FK_CTPhieuNhapSet_sanphamSet" StoreEntitySet="CTPhieuNhapSet">
+      <EndProperty Name="sanpham">
+        <ScalarProperty Name="Id" ColumnName="sanphamSet_Id" />
+      </EndProperty>
+      <EndProperty Name="CTPhieuNhap">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DonMuaSet_KhachHangSet" TypeName="QLBanHang.FK_DonMuaSet_KhachHangSet" StoreEntitySet="DonMuaSet">
+      <EndProperty Name="KhachHang">
+        <ScalarProperty Name="Id" ColumnName="KhachHangSet_Id" />
+      </EndProperty>
+      <EndProperty Name="DonMua">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_sanphamSet_DungLuongSet" TypeName="QLBanHang.FK_sanphamSet_DungLuongSet" StoreEntitySet="sanphamSet">
+      <EndProperty Name="DungLuong">
+        <ScalarProperty Name="Id" ColumnName="DungLuongSet_Id" />
+      </EndProperty>
+      <EndProperty Name="sanpham">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_sanphamSet_NongDoSet" TypeName="QLBanHang.FK_sanphamSet_NongDoSet" StoreEntitySet="sanphamSet">
+      <EndProperty Name="NongDo">
+        <ScalarProperty Name="Id" ColumnName="NongDoSet_Id" />
+      </EndProperty>
+      <EndProperty Name="sanpham">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_sanphamSet_NhanHieuSet" TypeName="QLBanHang.FK_sanphamSet_NhanHieuSet" StoreEntitySet="sanphamSet">
+      <EndProperty Name="NhanHieu">
+        <ScalarProperty Name="Id" ColumnName="NhanHieuSet_Id" />
+      </EndProperty>
+      <EndProperty Name="sanpham">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_PhieuNhapSet_NhaPPSet" TypeName="QLBanHang.FK_PhieuNhapSet_NhaPPSet" StoreEntitySet="PhieuNhapSet">
+      <EndProperty Name="NhaPP">
+        <ScalarProperty Name="Id" ColumnName="NhaPPSet_Id" />
+      </EndProperty>
+      <EndProperty Name="PhieuNhap">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

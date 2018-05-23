@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Mandy+_Stotre </title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Asset/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <!-- MetisMenu CSS -->
+    <link href="~/Asset/vendor/metisMenu/metisMenu.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Asset/dist/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="~/Asset/dist/css/sb-admin-2.min.css" rel="stylesheet" />
+    <!-- Morris Charts CSS -->
+    <link href="~/Asset/vendor/morrisjs/morris.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link href="~/Asset/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; background-color:#ffe7e7">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Address: 128 Nguyễn Sơn, p.Phú THọ Hòa, Quận tân phú</a>
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-top-links navbar-right">
+
+                <li class="dropdown">
+                    @Html.ActionLink("Danh Sách Đơn Hàng", "Index", "Home")
+                    <!-- /.dropdown-alerts -->
+                </li>
+
+                <li class="dropdown">
+                    @Html.Action("DonhangPatial", "Home")
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <li class="dropdown">
+                    @Html.Action("DanggiaoPatial", "Home")
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <li class="dropdown">
+                    @Html.Action("HoanThanhPatial", "Home")
+                    <!-- /.dropdown-alerts -->
+                </li>
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                <li>
+                    <a href="#"><i class="fa fa-user fa-fw"></i>@*@Session["hoten"].ToString()*@</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+
+                <!-- /.dropdown-user -->
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+
+                        <li>
+                            <a><i class="fa fa-edit"></i> Quản Lý Đơn Hàng <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li style="padding-left:15px; padding-top: 7px">
+                                    <p><i class="fa fa-shopping-cart"></i> @Html.ActionLink("Tất Cả Đơn Hàng", "Index", "Home")  </p>
+                                </li>
+                                <li style="padding-left:15px; padding-top: 7px">
+                                    <p><i class="fa fa-file-text"></i> @Html.Action("HuyDH", "Home")  </p>
+                                </li>
+
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a><i class="fa fa-edit"></i> Quản Lý Nhập Hàng <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li style="padding-left:15px; padding-top: 7px">
+                                    <p><i class="fa fa-file-text"></i> @Html.ActionLink("Tạo Phiếu Nhập", "CreatePN", "NhapHangs")   </p>
+                                </li>
+                                <li style="padding-left:15px; padding-top: 7px">
+                                    <p><i class="fa fa-shopping-cart"></i> @Html.ActionLink("Danh Sách Phiếu Nhập", "phieunhap", "NhapHangs")  </p>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li style="padding-left:15px; padding-top: 7px">
+                            <p><i class="fa fa-list"></i> @Html.ActionLink("Sản Phẩm", "Index", "SanPhams")  </p>
+                        </li>
+                        <li style="padding-left:15px; padding-top: 7px">
+                            <p><i class="fa fa-glass"></i> @Html.ActionLink("Nhãn Hiệu", "Index", "NhanHieux1")  </p>
+                        </li>
+                        <li style="padding-left:15px; padding-top: 7px">
+                            <p><i class="fa fa-rss"></i> @Html.ActionLink("Dung Lượng", "Index", "DungLuongs")  </p>
+                        </li>
+
+
+                        <li style=" padding-left:15px; padding-top: 7px">
+                            <p><i class="glyphicon glyphicon-user"></i> @Html.ActionLink("Khách Hàng", "Index", "KhachHangs1")  </p>
+                        </li>
+                        <li style=" padding-left:15px; padding-top: 7px">
+                            <p><i class="fa fa-calendar"></i> @Html.ActionLink("Nhân Viên", "Index", "Admins")  </p>
+                        </li>
+
+                        <li style=" padding-left:15px; padding-top: 7px">
+                            <p><i class="fa fa-file-text"></i> @Html.ActionLink("Báo Cáo Thống Kê", "Index", "Home")  </p>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        MandyStore <i class="fa fa-heart"></i>
+                        <br />
+                        <img style="width:30px ; height:30px" src="~/Asset/images/ngsao2.png" /> <img style="width:30px ; height:30px" src="~/Asset/images/ngsao2.png" />    <img style="width:30px ; height:30px" src="~/Asset/images/ngsao2.png" />  <img style="width:30px ; height:30px" src="~/Asset/images/ngsao2.png" />
+
+
+                    </div>
+                    <div>
+                        @RenderBody()
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+                <!-- /.row -->
+                <!-- /.panel-body -->
+
+
+
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- Custom Theme JavaScript -->
+
+    <script language="javascript" type="text/javascript">
+        function TaoDuLieu(TrangThai) {
+
+            var rst;
+            var connection;
+            var sql;
+
+            var rst = new ActiveXObject("ADODB.Recordset");
+            var connection = new ActiveXObject("ADODB.Connection");
+
+            connection.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.;Initial Catalog=BanHangNuocHoa;Integrated Security=True");
+            if (TrangThai == "TC")
+                sql = "select * from DatHang";
+            else
+                sql = "Select * from DatHang where TrangThai = '" + TrangThai + "'";
+            rst.Open(sql, connection);
+            var str = "<table border = '0' cellspacing='0'>";
+            while (!rst.EOF) {
+                str = str + "<table>";
+                str = str + "<tr>";
+                str = str + "<th> Mã Khách Hàng : " + rst(1) + "</th>";
+                str = str + "<th>  Tổng Tiền : " + rst(3) + "</th>";
+                str = str + "<Th>  Địa Chỉ Giao Hàng: " + rst(5) + "</th>";
+                str = str + "<Th> Trạng Thái : " + rst(6) + "</th>";
+                str = str + "</tr>";
+                str = str + "</table>";
+
+                rst.moveNext();
+            }
+            str = str + "</table>";
+            document.getElementById("items").innerHTML = str;
+            rst.Close();
+        }
+
+    </script>
+
+
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="~/Asset/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Asset/vendor/jquery/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Asset/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <link href="~/Asset/vendor/metisMenu/metisMenu.css" rel="stylesheet" />
+    <link href="~/Asset/vendor/metisMenu/metisMenu.min.css" rel="stylesheet" />
+
+    <script src="~/Asset/vendor/metisMenu/metisMenu.js"></script>
+    <script src="~/Asset/vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="~/Asset/vendor/raphael/raphael.min.js"></script>
+    <script src="~/Asset/vendor/morrisjs/morris.min.js"></script>
+    <script src="~/Asset/data/morris-data.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Asset/dist/js/sb-admin-2.min.js"></script>
+
+    <link href="~/Content/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable({
+                "pagingType": "full_numbers",
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1075 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B9AFE1E-5A56-4E9A-9DAB-20A7A5D9C1FB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QLBanHang</RootNamespace>
+    <AssemblyName>QLBanHang</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\QuanLy\css\dan.css" />
+    <Content Include="Areas\QuanLy\css\ie.css" />
+    <Content Include="Areas\QuanLy\css\login.css" />
+    <Content Include="Areas\QuanLy\css\login.js" />
+    <Content Include="Areas\QuanLy\css\slide.css" />
+    <Content Include="Areas\QuanLy\css\style.css" />
+    <Content Include="Areas\QuanLy\images\%24_32.JPG" />
+    <Content Include="Areas\QuanLy\images\0920103.jpg" />
+    <Content Include="Areas\QuanLy\images\123.png" />
+    <Content Include="Areas\QuanLy\images\2.jpg" />
+    <Content Include="Areas\QuanLy\Views\SanPhams\Details.cshtml" />
+    <Content Include="Areas\QuanLy\Views\SanPhams\Edit.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="cssAutocomplete\jquery-ui.css" />
+    <Content Include="Asset\css\login.css" />
+    <Content Include="Asset\css\style.css" />
+    <Content Include="Asset\images\anhbiaaaa.jpg" />
+    <Content Include="ScriptPage\autocomplete\jquery-ui.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Asset\css\dan.css" />
+    <Content Include="Asset\css\ie.css" />
+    <Content Include="Asset\css\slide.css" />
+    <Content Include="Asset\data\flot-data.js" />
+    <Content Include="Asset\data\morris-data.js" />
+    <Content Include="Asset\dist\css\sb-admin-2.css" />
+    <Content Include="Asset\dist\css\sb-admin-2.min.css" />
+    <Content Include="Asset\dist\js\sb-admin-2.js" />
+    <Content Include="Asset\dist\js\sb-admin-2.min.js" />
+    <Content Include="Asset\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Asset\images\%24_32.JPG" />
+    <Content Include="Asset\images\0920103.jpg" />
+    <Content Include="Asset\images\123.png" />
+    <Content Include="Asset\images\2.jpg" />
+    <Content Include="Asset\images\20638529_1847573255572147_6632538088737172905_n.jpg" />
+    <Content Include="Asset\images\2067376_1.jpg" />
+    <Content Include="Asset\images\22222.jpg" />
+    <Content Include="Asset\images\22547805_678920565641823_730417255_n.jpg" />
+    <Content Include="Asset\images\22554413_678922705641609_575565762_n.jpg" />
+    <Content Include="Asset\images\22635174_678921212308425_1376322053_n.jpg" />
+    <Content Include="Asset\images\23167941_1887066221622850_2400186691084583506_n.jpg" />
+    <Content Include="Asset\images\23316175_687847098082503_460132991_n.jpg" />
+    <Content Include="Asset\images\23335718_687857541414792_1909330024_o.jpg" />
+    <Content Include="Asset\images\234.jpg" />
+    <Content Include="Asset\images\24067923_1899656247030514_4006216595247376493_n.jpg" />
+    <Content Include="Asset\images\24129729_1900624823600323_1236762385208032722_n.jpg" />
+    <Content Include="Asset\images\24174574_1_n.jpg" />
+    <Content Include="Asset\images\24301024_1902234000106072_8174863547328728580_n.jpg" />
+    <Content Include="Asset\images\24774685_1902555780073894_3979900797419337705_n.jpg" />
+    <Content Include="Asset\images\251883.jpg" />
+    <Content Include="Asset\images\321.jpg" />
+    <Content Include="Asset\images\3cl1zzcgbfdha.jpg" />
+    <Content Include="Asset\images\421414png.png" />
+    <Content Include="Asset\images\432.jpg" />
+    <Content Include="Asset\images\47bb6bdb6cb5eb27ab43c0fb13a8a540.jpg" />
+    <Content Include="Asset\images\77777.png" />
+    <Content Include="Asset\images\a.jpg" />
+    <Content Include="Asset\images\aaaaaa.png" />
+    <Content Include="Asset\images\abc.jpg" />
+    <Content Include="Asset\images\abc.png" />
+    <Content Include="Asset\images\abcdef.jpg" />
+    <Content Include="Asset\images\abia.jpg" />
+    <Content Include="Asset\images\afsafaed.png" />
+    <Content Include="Asset\images\alaiiaa_n.jpg" />
+    <Content Include="Asset\images\allure.jpg" />
+    <Content Include="Asset\images\anh-bia-facebook-chuc-mung-giang-sinh-noel-1.jpg" />
+    <Content Include="Asset\images\anh1.jpg" />
+    <Content Include="Asset\images\anhbia.jpg" />
+    <Content Include="Asset\images\aoko.jpg" />
+    <Content Include="Asset\images\aqua.jpg" />
+    <Content Include="Asset\images\asd.png" />
+    <Content Include="Asset\images\b.jpg" />
+    <Content Include="Asset\images\bbr.jpg" />
+    <Content Include="Asset\images\beauties.jpg" />
+    <Content Include="Asset\images\bg-body.png" />
+    <Content Include="Asset\images\bg-contentbox.png" />
+    <Content Include="Asset\images\bg-strips.png" />
+    <Content Include="Asset\images\bg_play_pause.png" />
+    <Content Include="Asset\images\big-winter-sale-poste.jpg" />
+    <Content Include="Asset\images\bigsale.png" />
+    <Content Include="Asset\images\bleu.jpg" />
+    <Content Include="Asset\images\bleu2.jpg" />
+    <Content Include="Asset\images\bleumini.jpg" />
+    <Content Include="Asset\images\brush.jpg" />
+    <Content Include="Asset\images\buttons.png" />
+    <Content Include="Asset\images\bvlblack.jpg" />
+    <Content Include="Asset\images\bvlgolden.jpg" />
+    <Content Include="Asset\images\bvlmini.jpg" />
+    <Content Include="Asset\images\cart.png" />
+    <Content Include="Asset\images\chanelcocooo.jpg" />
+    <Content Include="Asset\images\chanelno5.jpg" />
+    <Content Include="Asset\images\channel.jpg" />
+    <Content Include="Asset\images\christmas-sale-christmas-tree-red-drawn-banner-text-sign-business-holiday-concept.jpg" />
+    <Content Include="Asset\images\Christmas-Sale-cropped-23061791.jpg" />
+    <Content Include="Asset\images\ck.jpg" />
+    <Content Include="Asset\images\ckbe.jpg" />
+    <Content Include="Asset\images\ckgold.jpg" />
+    <Content Include="Asset\images\ckgold2.jpg" />
+    <Content Include="Asset\images\coca1.jpg" />
+    <Content Include="Asset\images\comb.jpg" />
+    <Content Include="Asset\images\comdien1.jpg" />
+    <Content Include="Asset\images\comdien2.jpg" />
+    <Content Include="Asset\images\Cosmetic-Sale.jpg" />
+    <Content Include="Asset\images\cosmetics.jpg" />
+    <Content Include="Asset\images\coverfb.jpg" />
+    <Content Include="Asset\images\curls-large.jpg" />
+    <Content Include="Asset\images\curls.jpg" />
+    <Content Include="Asset\images\d&amp;g.jpg" />
+    <Content Include="Asset\images\d&amp;g2.jpg" />
+    <Content Include="Asset\images\daisy.jpg" />
+    <Content Include="Asset\images\daisy2.png" />
+    <Content Include="Asset\images\daisy3.jpg" />
+    <Content Include="Asset\images\daisy4.jpg" />
+    <Content Include="Asset\images\daisydream.jpg" />
+    <Content Include="Asset\images\daisytui.jpg" />
+    <Content Include="Asset\images\diormiss.png" />
+    <Content Include="Asset\images\diorr.jpg" />
+    <Content Include="Asset\images\diorSauvage.jpg" />
+    <Content Include="Asset\images\eau-parfum-narciso-rodriguez-blog-photos-upupup.fr-1-1024x682.jpg" />
+    <Content Include="Asset\images\eye-beauty.jpg" />
+    <Content Include="Asset\images\favicon.ico" />
+    <Content Include="Asset\images\fb.png" />
+    <Content Include="Asset\images\fragrance-large.jpg" />
+    <Content Include="Asset\images\fragrance.jpg" />
+    <Content Include="Asset\images\frames.png" />
+    <Content Include="Asset\images\get %281%29.jpg" />
+    <Content Include="Asset\images\get %282%29.jpg" />
+    <Content Include="Asset\images\get.jpg" />
+    <Content Include="Asset\images\get.png" />
+    <Content Include="Asset\images\get1.png" />
+    <Content Include="Asset\images\get10.jpg" />
+    <Content Include="Asset\images\get11.jpg" />
+    <Content Include="Asset\images\get14.jpg" />
+    <Content Include="Asset\images\get15.jpg" />
+    <Content Include="Asset\images\get16.jpg" />
+    <Content Include="Asset\images\get17.jpg" />
+    <Content Include="Asset\images\get18.jpg" />
+    <Content Include="Asset\images\get19.jpg" />
+    <Content Include="Asset\images\get2.jpg" />
+    <Content Include="Asset\images\get20.jpg" />
+    <Content Include="Asset\images\get21.jpg" />
+    <Content Include="Asset\images\get3.jpg" />
+    <Content Include="Asset\images\get4.jpg" />
+    <Content Include="Asset\images\get5.jpg" />
+    <Content Include="Asset\images\get6.jpg" />
+    <Content Include="Asset\images\get7.jpg" />
+    <Content Include="Asset\images\get8.jpg" />
+    <Content Include="Asset\images\get9.jpg" />
+    <Content Include="Asset\images\getacdd.png" />
+    <Content Include="Asset\images\gift.jpg" />
+    <Content Include="Asset\images\giftdaisy.jpg" />
+    <Content Include="Asset\images\giftset.jpg" />
+    <Content Include="Asset\images\giftset2.jpg" />
+    <Content Include="Asset\images\gilette1.jpg" />
+    <Content Include="Asset\images\gilette2.jpg" />
+    <Content Include="Asset\images\gio.jpg" />
+    <Content Include="Asset\images\gio1.jpg" />
+    <Content Include="Asset\images\gio3.jpg" />
+    <Content Include="Asset\images\gucci.jpg" />
+    <Content Include="Asset\images\Guerlain-4.jpg" />
+    <Content Include="Asset\images\half-face.jpg" />
+    <Content Include="Asset\images\hhakjha.jpg" />
+    <Content Include="Asset\images\hhjhjhj.jpg" />
+    <Content Include="Asset\images\Hoa.jpg" />
+    <Content Include="Asset\images\icons.png" />
+    <Content Include="Asset\images\if_agt_home_17821.png" />
+    <Content Include="Asset\images\if_heart-o_1608926.png" />
+    <Content Include="Asset\images\if_home_353416.png" />
+    <Content Include="Asset\images\if_icon-111-search_314478.png" />
+    <Content Include="Asset\images\if_Instagram_345416.png" />
+    <Content Include="Asset\images\if_social-facebook_299104.png" />
+    <Content Include="Asset\images\images.jpg" />
+    <Content Include="Asset\images\img-mypham-top.png" />
+    <Content Include="Asset\images\IMG_5014.jpg" />
+    <Content Include="Asset\images\IMG_5020.jpg" />
+    <Content Include="Asset\images\inter.png" />
+    <Content Include="Asset\images\interface.png" />
+    <Content Include="Asset\images\item-01.jpg" />
+    <Content Include="Asset\images\item-02.jpg" />
+    <Content Include="Asset\images\iuiuiuiu.jpg" />
+    <Content Include="Asset\images\j6a4xw5etad61.jpg" />
+    <Content Include="Asset\images\Jomallon2.jpg" />
+    <Content Include="Asset\images\Jomalon.jpg" />
+    <Content Include="Asset\images\jomalonee.jpg" />
+    <Content Include="Asset\images\Juicy-Couture-rose-13.jpg" />
+    <Content Include="Asset\images\ken1.jpg" />
+    <Content Include="Asset\images\kkakakak.jpg" />
+    <Content Include="Asset\images\large.jpg" />
+    <Content Include="Asset\images\lemal.jpg" />
+    <Content Include="Asset\images\limebasil.jpg" />
+    <Content Include="Asset\images\lip-check.jpg" />
+    <Content Include="Asset\images\lipsticks-large.jpg" />
+    <Content Include="Asset\images\lipsticks-refill.jpg" />
+    <Content Include="Asset\images\lipsticks-small.png" />
+    <Content Include="Asset\images\lipsticks.png" />
+    <Content Include="Asset\images\lipsticks2-large.jpg" />
+    <Content Include="Asset\images\lipsticks2-small.png" />
+    <Content Include="Asset\images\lipsticks2.png" />
+    <Content Include="Asset\images\liptick.jpg" />
+    <Content Include="Asset\images\logo.jpg" />
+    <Content Include="Asset\images\lolamarcjacob.jpg" />
+    <Content Include="Asset\images\MAC SALE HAUTELOOK.png" />
+    <Content Include="Asset\images\MAC+.jpg" />
+    <Content Include="Asset\images\MAC-lipstick.jpg" />
+    <Content Include="Asset\images\mac-nicki-minaj.jpg" />
+    <Content Include="Asset\images\MAC-Vibe-Tribe-382.jpg" />
+    <Content Include="Asset\images\Mac.jpg" />
+    <Content Include="Asset\images\Mac2.jpg" />
+    <Content Include="Asset\images\mac3.jpg" />
+    <Content Include="Asset\images\macccc2.jpg" />
+    <Content Include="Asset\images\MAC_Russian_Red_Lipstick_2.jpg" />
+    <Content Include="Asset\images\mac_sku_S2KG04_280x320_0.jpg" />
+    <Content Include="Asset\images\make-up.jpg" />
+    <Content Include="Asset\images\makeUp-large.jpg" />
+    <Content Include="Asset\images\makeUp.jpg" />
+    <Content Include="Asset\images\mandy.jpg" />
+    <Content Include="Asset\images\marctui.jpg" />
+    <Content Include="Asset\images\marry.png" />
+    <Content Include="Asset\images\maryme.jpg" />
+    <Content Include="Asset\images\mayanh1.jpg" />
+    <Content Include="Asset\images\minigame.jpg" />
+    <Content Include="Asset\images\mydan_2.jpg" />
+    <Content Include="Asset\images\naciso.jpg" />
+    <Content Include="Asset\images\nar1.jpg" />
+    <Content Include="Asset\images\nar10.jpg" />
+    <Content Include="Asset\images\nar2.jpg" />
+    <Content Include="Asset\images\nar3.jpg" />
+    <Content Include="Asset\images\nar4.jpg" />
+    <Content Include="Asset\images\nar5.jpg" />
+    <Content Include="Asset\images\nar6.jpg" />
+    <Content Include="Asset\images\narforhim.jpg" />
+    <Content Include="Asset\images\narmini.jpg" />
+    <Content Include="Asset\images\nennd.png" />
+    <Content Include="Asset\images\nuochoa.jpg" />
+    <Content Include="Asset\images\nyx-lingeries-mau-seduction-1491194880-1-2195346-1491194880.jpg" />
+    <Content Include="Asset\images\nyx.jpg" />
+    <Content Include="Asset\images\oooo.jpg" />
+    <Content Include="Asset\images\PhanMac.jpg" />
+    <Content Include="Asset\images\pj.png" />
+    <Content Include="Asset\images\posoin.jpg" />
+    <Content Include="Asset\images\powder-large.jpg" />
+    <Content Include="Asset\images\powder-small.png" />
+    <Content Include="Asset\images\powder.png" />
+    <Content Include="Asset\images\powders.jpg" />
+    <Content Include="Asset\images\product_tbn_tBWdo9ohyP-700x850.jpg" />
+    <Content Include="Asset\images\rnopj7ihzzt7u.jpg" />
+    <Content Include="Asset\images\s1849975-main-Lhero.jpg" />
+    <Content Include="Asset\images\sale 17821.png" />
+    <Content Include="Asset\images\salechirstmas.jpg" />
+    <Content Include="Asset\images\salechỉmas.jpg" />
+    <Content Include="Asset\images\set-very-sexy.jpg" />
+    <Content Include="Asset\images\set.jpg" />
+    <Content Include="Asset\images\siggnorina.jpg" />
+    <Content Include="Asset\images\skin-care-large.jpg" />
+    <Content Include="Asset\images\skin-care.jpg" />
+    <Content Include="Asset\images\son1.jpg" />
+    <Content Include="Asset\images\son10.jpg" />
+    <Content Include="Asset\images\son11.jpg" />
+    <Content Include="Asset\images\son12.jpg" />
+    <Content Include="Asset\images\son13.jpg" />
+    <Content Include="Asset\images\son14.jpg" />
+    <Content Include="Asset\images\son15.jpg" />
+    <Content Include="Asset\images\son16.jpg" />
+    <Content Include="Asset\images\son17.jpg" />
+    <Content Include="Asset\images\son18.jpg" />
+    <Content Include="Asset\images\son19.jpg" />
+    <Content Include="Asset\images\son2.jpg" />
+    <Content Include="Asset\images\son20.jpg" />
+    <Content Include="Asset\images\son21.jpg" />
+    <Content Include="Asset\images\son22.jpg" />
+    <Content Include="Asset\images\son23.jpg" />
+    <Content Include="Asset\images\son24.jpg" />
+    <Content Include="Asset\images\son3.jpg" />
+    <Content Include="Asset\images\son4.jpg" />
+    <Content Include="Asset\images\son5.jpg" />
+    <Content Include="Asset\images\son6.jpg" />
+    <Content Include="Asset\images\son7.jpg" />
+    <Content Include="Asset\images\son8.jpg" />
+    <Content Include="Asset\images\son9.jpg" />
+    <Content Include="Asset\images\sàdgv.png" />
+    <Content Include="Asset\images\thumbnail-concealer.jpg" />
+    <Content Include="Asset\images\thumbnail-eyeShadow.jpg" />
+    <Content Include="Asset\images\thumbnail-lipstick.jpg" />
+    <Content Include="Asset\images\thumbnail-powder.jpg" />
+    <Content Include="Asset\images\timkiem.ico" />
+    <Content Include="Asset\images\tomford.jpg" />
+    <Content Include="Asset\images\tomford2.jpg" />
+    <Content Include="Asset\images\tomfordtrang.jpg" />
+    <Content Include="Asset\images\V602790-700x850.jpg" />
+    <Content Include="Asset\images\valentino.jpg" />
+    <Content Include="Asset\images\valentino1.jpg" />
+    <Content Include="Asset\images\verrysexxy.jpg" />
+    <Content Include="Asset\images\versace.jpg" />
+    <Content Include="Asset\images\Victoria.jpg" />
+    <Content Include="Asset\images\viva.jpg" />
+    <Content Include="Asset\images\VS-very-sexy.png" />
+    <Content Include="Asset\images\vsaaa.jpg" />
+    <Content Include="Asset\images\vsbombsell.jpg" />
+    <Content Include="Asset\images\vsbs.jpg" />
+    <Content Include="Asset\images\vsooo.jpg" />
+    <Content Include="Asset\images\wzq1489993219.jpg" />
+    <Content Include="Asset\images\xit.jpg" />
+    <Content Include="Asset\images\zalo-min.png" />
+    <Content Include="Asset\images\zs.png" />
+    <Content Include="Asset\js\sb-admin-2.js" />
+    <Content Include="Asset\scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Asset\scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Asset\scripts\bootstrap.js" />
+    <Content Include="Asset\scripts\bootstrap.min.js" />
+    <Content Include="Asset\less\mixins.less" />
+    <Content Include="Asset\less\sb-admin-2.less" />
+    <Content Include="Asset\less\variables.less" />
+    <Content Include="Areas\QuanLy\Views\web.config" />
+    <Content Include="Areas\QuanLy\Views\SanPhams\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Login\Login.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\DonhangPatial.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\DonHang.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\GiaoHang.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\DanggiaoPatial.cshtml" />
+    <Content Include="Areas\QuanLy\Views\NhapHangs\phieunhap.cshtml" />
+    <Content Include="Areas\QuanLy\Views\NhapHangs\CreatePN.cshtml" />
+    <Content Include="Areas\QuanLy\Views\NhapHangs\CTphieunhap.cshtml" />
+    <Content Include="Areas\QuanLy\Views\NhapHangs\CreateNhapHang.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\HoanThanh.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\HoanThanhPatial.cshtml" />
+    <Content Include="Areas\QuanLy\Views\KhachHangs1\Create.cshtml" />
+    <Content Include="Areas\QuanLy\Views\KhachHangs1\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Admins\Create.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Admins\Delete.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Admins\Edit.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Admins\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\DonHangdaxoa.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\HuyDH.cshtml" />
+    <Content Include="Areas\QuanLy\Views\Home\CTdathang.cshtml" />
+    <Content Include="Areas\QuanLy\Views\KhachHangs1\Edit.cshtml" />
+    <Content Include="Areas\QuanLy\Views\NhanHieux1\Create.cshtml" />
+    <Content Include="Areas\QuanLy\Views\NhanHieux1\Edit.cshtml" />
+    <Content Include="Areas\QuanLy\Views\NhanHieux1\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\DungLuongs\Create.cshtml" />
+    <Content Include="Areas\QuanLy\Views\DungLuongs\Index.cshtml" />
+    <Content Include="Areas\QuanLy\Views\NPPs\Create.cshtml" />
+    <Content Include="Areas\QuanLy\Views\NPPs\Index.cshtml" />
+    <None Include="Asset\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Asset\scripts\jquery-1.10.2.js" />
+    <Content Include="Asset\scripts\jquery-1.10.2.min.js" />
+    <Content Include="Asset\scripts\modernizr-2.6.2.js" />
+    <Content Include="Asset\sprites\bg-strips\bg-header.png" />
+    <Content Include="Asset\sprites\bg-strips\bg-navigation.png" />
+    <Content Include="Asset\sprites\bg-strips\highlight.png" />
+    <Content Include="Asset\sprites\buttons\bg-btnSubmit.png" />
+    <Content Include="Asset\sprites\buttons\btn-adtocart-hover.png" />
+    <Content Include="Asset\sprites\buttons\btn-adtocart.png" />
+    <Content Include="Asset\sprites\buttons\btn-continueShopping.png" />
+    <Content Include="Asset\sprites\buttons\btn-proceed.png" />
+    <Content Include="Asset\sprites\buttons\btn-submit.png" />
+    <Content Include="Asset\sprites\buttons\btn-submit2.png" />
+    <Content Include="Asset\sprites\buttons\btn-update.png" />
+    <Content Include="Asset\sprites\frames\bg-cart.png" />
+    <Content Include="Asset\sprites\frames\bg-header.png" />
+    <Content Include="Asset\sprites\frames\frame.png" />
+    <Content Include="Asset\sprites\frames\frame2.png" />
+    <Content Include="Asset\sprites\icons\icon-cart.png" />
+    <Content Include="Asset\sprites\icons\icon-facebook-hover.png" />
+    <Content Include="Asset\sprites\icons\icon-facebook.png" />
+    <Content Include="Asset\sprites\icons\icon-home.png" />
+    <Content Include="Asset\sprites\icons\icon-mail.png" />
+    <Content Include="Asset\sprites\icons\icon-phone.png" />
+    <Content Include="Asset\sprites\icons\icon-rss-hover.png" />
+    <Content Include="Asset\sprites\icons\icon-rss.png" />
+    <Content Include="Asset\sprites\icons\icon-twitter-hover.png" />
+    <Content Include="Asset\sprites\icons\icon-twitter.png" />
+    <Content Include="Asset\sprites\icons\icon-vimeo-hover.png" />
+    <Content Include="Asset\sprites\icons\icon-vimeo.png" />
+    <Content Include="Asset\sprites\interface\bg-checkbox.png" />
+    <Content Include="Asset\sprites\interface\bg-checkedbox.png" />
+    <Content Include="Asset\sprites\interface\bg-select.png" />
+    <Content Include="Asset\sprites\interface\bg-specialOffer.png" />
+    <Content Include="Asset\sprites\interface\bullet-hover.png" />
+    <Content Include="Asset\sprites\interface\bullet.png" />
+    <Content Include="Asset\sprites\interface\clearance.png" />
+    <Content Include="Asset\sprites\interface\icon-shopNow.png" />
+    <Content Include="Asset\sprites\interface\icon-shopNow2.png" />
+    <Content Include="Asset\sprites\interface\icon-shopNow3.png" />
+    <Content Include="Asset\vendor\bootstrap-social\bootstrap-social.css" />
+    <Content Include="Asset\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Asset\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Asset\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Asset\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Asset\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Asset\vendor\datatables-plugins\dataTables.bootstrap.css" />
+    <Content Include="Asset\vendor\datatables-plugins\dataTables.bootstrap.js" />
+    <Content Include="Asset\vendor\datatables-plugins\dataTables.bootstrap.min.js" />
+    <Content Include="Asset\vendor\datatables-plugins\index.html" />
+    <Content Include="Asset\vendor\datatables-responsive\dataTables.responsive.css" />
+    <Content Include="Asset\vendor\datatables-responsive\dataTables.responsive.js" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.bootstrap.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.bootstrap4.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.foundation.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.foundation.min.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.jqueryui.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.material.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.material.min.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.semanticui.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.semanticui.min.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.uikit.css" />
+    <Content Include="Asset\vendor\datatables\css\dataTables.uikit.min.css" />
+    <Content Include="Asset\vendor\datatables\css\jquery.dataTables.css" />
+    <Content Include="Asset\vendor\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="Asset\vendor\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Asset\vendor\datatables\images\favicon.ico" />
+    <Content Include="Asset\vendor\datatables\images\sort_asc.png" />
+    <Content Include="Asset\vendor\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Asset\vendor\datatables\images\sort_both.png" />
+    <Content Include="Asset\vendor\datatables\images\sort_desc.png" />
+    <Content Include="Asset\vendor\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.bootstrap.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.bootstrap.min.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.bootstrap4.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.foundation.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.foundation.min.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.jqueryui.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.jqueryui.min.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.material.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.material.min.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.semanticui.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.semanticui.min.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.uikit.js" />
+    <Content Include="Asset\vendor\datatables\js\dataTables.uikit.min.js" />
+    <Content Include="Asset\vendor\datatables\js\jquery.dataTables.js" />
+    <Content Include="Asset\vendor\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Asset\vendor\datatables\js\jquery.js" />
+    <Content Include="Asset\vendor\flot-tooltip\jquery.flot.tooltip.js" />
+    <Content Include="Asset\vendor\flot-tooltip\jquery.flot.tooltip.min.js" />
+    <Content Include="Asset\vendor\flot-tooltip\jquery.flot.tooltip.source.js" />
+    <Content Include="Asset\vendor\flot\excanvas.js" />
+    <Content Include="Asset\vendor\flot\excanvas.min.js" />
+    <Content Include="Asset\vendor\flot\jquery.colorhelpers.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.canvas.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.categories.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.crosshair.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.errorbars.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.image.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.navigate.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.pie.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.resize.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.selection.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.stack.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.symbol.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.threshold.js" />
+    <Content Include="Asset\vendor\flot\jquery.flot.time.js" />
+    <Content Include="Asset\vendor\flot\jquery.js" />
+    <Content Include="Asset\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Asset\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Asset\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Asset\vendor\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Asset\vendor\jquery\jquery.js" />
+    <Content Include="Asset\vendor\jquery\jquery.min.js" />
+    <Content Include="Asset\vendor\metisMenu\metisMenu.css" />
+    <Content Include="Asset\vendor\metisMenu\metisMenu.js" />
+    <Content Include="Asset\vendor\metisMenu\metisMenu.min.css" />
+    <Content Include="Asset\vendor\metisMenu\metisMenu.min.js" />
+    <Content Include="Asset\vendor\morrisjs\morris.css" />
+    <Content Include="Asset\vendor\morrisjs\morris.js" />
+    <Content Include="Asset\vendor\morrisjs\morris.min.js" />
+    <Content Include="Asset\vendor\raphael\raphael.js" />
+    <Content Include="Asset\vendor\raphael\raphael.min.js" />
+    <Content Include="Jquery\jquery-3.2.1.js" />
+    <Content Include="Jquery\jquery-3.2.1.min.js" />
+    <Content Include="ScriptPage\Main.js" />
+    <Content Include="Scripts\copy_csv_xls_pdf.swf" />
+    <Content Include="Scripts\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\TableTools.js" />
+    <Content Include="Scripts\TableTools_orig.js" />
+    <Content Include="Scripts\ZeroClipboard.js" />
+    <Content Include="Web.config" />
+    <Content Include="Asset\sprites\bg-strips\bg-strips.psd" />
+    <Content Include="Asset\sprites\buttons\buttons.psd" />
+    <Content Include="Asset\sprites\frames\frames.psd" />
+    <Content Include="Asset\sprites\icons\icons.psd" />
+    <Content Include="Asset\sprites\interface\interface.psd" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Asset\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Asset\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Asset\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Asset\scripts\jquery-1.10.2.min.map" />
+    <Content Include="Asset\vendor\bootstrap-social\bootstrap-social.less" />
+    <Content Include="Asset\vendor\bootstrap-social\bootstrap-social.scss" />
+    <Content Include="Asset\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Asset\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Asset\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Asset\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Asset\vendor\datatables-responsive\dataTables.responsive.scss" />
+    <Content Include="Asset\vendor\datatables\images\Sorting icons.psd" />
+    <Content Include="Asset\vendor\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Asset\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Asset\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Asset\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Asset\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Asset\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Asset\vendor\font-awesome\less\animated.less" />
+    <Content Include="Asset\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Asset\vendor\font-awesome\less\core.less" />
+    <Content Include="Asset\vendor\font-awesome\less\extras.less" />
+    <Content Include="Asset\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="Asset\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="Asset\vendor\font-awesome\less\icons.less" />
+    <Content Include="Asset\vendor\font-awesome\less\larger.less" />
+    <Content Include="Asset\vendor\font-awesome\less\list.less" />
+    <Content Include="Asset\vendor\font-awesome\less\mixins.less" />
+    <Content Include="Asset\vendor\font-awesome\less\path.less" />
+    <Content Include="Asset\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Asset\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="Asset\vendor\font-awesome\less\spinning.less" />
+    <Content Include="Asset\vendor\font-awesome\less\stacked.less" />
+    <Content Include="Asset\vendor\font-awesome\less\variables.less" />
+    <Content Include="Asset\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_extras.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_spinning.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="Asset\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Views\Shared\_LayoutTrangChu.cshtml" />
+    <Content Include="Views\TrangChu\Perfume.cshtml" />
+    <Content Include="Views\TrangChu\Index.cshtml" />
+    <Content Include="Views\TrangChu\Details.cshtml" />
+    <Content Include="Views\Nguoidung\Dangky.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GiohangPartial.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
+    <Content Include="Views\GioHang\Xacnhandonhang.cshtml" />
+    <Content Include="Views\TrangChu\BestSeller.cshtml" />
+    <Content Include="Jquery\jquery-3.2.1.min.map" />
+    <Content Include="Views\TrangChu\LoadHieu.cshtml" />
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Views\TrangChu\sanpham1.cshtml" />
+    <Content Include="Views\TrangChu\about.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\AdminsController.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\DungLuongsController.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\HomeController.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\KhachHangs1Controller.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\LoginController.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\NhanHieux1Controller.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\NhapHangsController.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\NPPsController.cs" />
+    <Compile Include="Areas\QuanLy\Controllers\SanPhamsController.cs" />
+    <Compile Include="Areas\QuanLy\Models\Admin.cs" />
+    <Compile Include="Areas\QuanLy\Models\chitietdonhangload.cs" />
+    <Compile Include="Areas\QuanLy\Models\ChiTietPhieuLoad.cs" />
+    <Compile Include="Areas\QuanLy\Models\CTDonMua.cs" />
+    <Compile Include="Areas\QuanLy\Models\CTDonMuaDaXoa.cs" />
+    <Compile Include="Areas\QuanLy\Models\CTPhieuNhap.cs" />
+    <Compile Include="Areas\QuanLy\Models\DatHang.cs" />
+    <Compile Include="Areas\QuanLy\Models\DONHANGDAXOA.cs" />
+    <Compile Include="Areas\QuanLy\Models\DungLuong.cs" />
+    <Compile Include="Areas\QuanLy\Models\GioiTinh.cs" />
+    <Compile Include="Areas\QuanLy\Models\KhachHang.cs" />
+    <Compile Include="Areas\QuanLy\Models\Model1.cs" />
+    <Compile Include="Areas\QuanLy\Models\NhanHieu.cs" />
+    <Compile Include="Areas\QuanLy\Models\NhapHang.cs" />
+    <Compile Include="Areas\QuanLy\Models\NongDo.cs" />
+    <Compile Include="Areas\QuanLy\Models\NPP.cs" />
+    <Compile Include="Areas\QuanLy\Models\PhieuNhap.cs" />
+    <Compile Include="Areas\QuanLy\Models\SanPham.cs" />
+    <Compile Include="Areas\QuanLy\Models\sysdiagram.cs" />
+    <Compile Include="Areas\QuanLy\QuanLyAreaRegistration.cs" />
+    <Compile Include="ConnectClass.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\NguoidungController.cs" />
+    <Compile Include="Controllers\TrangChuController.cs" />
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\CTDonMua.cs" />
+    <Compile Include="Models\CTPhieuNhap.cs" />
+    <Compile Include="Models\DatHang.cs" />
+    <Compile Include="Models\DungLuong.cs" />
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\GioiTinh.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\NhanHieu.cs" />
+    <Compile Include="Models\NongDo.cs" />
+    <Compile Include="Models\NPP.cs" />
+    <Compile Include="Models\PhieuNhap.cs" />
+    <Compile Include="Models\SanPham.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39832</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:39832/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

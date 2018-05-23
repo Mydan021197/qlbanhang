@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Xacnhandonhang";
+    Layout = "~/Views/Shared/_LayoutTrangChu.cshtml";
+}
+
+<style>
+    .box1 > h2, form#cart table th, #cart table tbody tr:hover td {
+        background: #ffebeb;
+    }
+
+    #sidebar .box1 {
+        width: 250px;
+        margin-top: 25px;
+        border: double;
+    }
+
+        #sidebar .box1 h2 {
+            margin: 0;
+            text-align: center;
+        }
+
+    #items .box1 {
+        width: 238px;
+    }
+
+    #sidebar .box1 ul li a, #sidebar .news > ul li a {
+        color: #b9315a;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+</style>
+
+<div id="main" >
+    <div>
+        <img src="~/Asset/images/abcccc.jpg" height="400" width="800" style="padding-left:10px; margin-top:10px" />
+    </div>
+
+    <div id="items" style="color: #571414;text-decoration: none">
+
+        <h1>Cảm Ơn quý khách đã đặt hàng tại Shop! Nhân Viên sẽ liên hệ với quý khách trong thời gian sớm nhất </h1>
+        <span>@Html.ActionLink("Trờ lại trang chủ", "Index", "TrangChu")</span>
+
+    </div>
+</div>
+
+<div id="sidebar" style="padding-top: 20px">
+    <div class="news">
+        <ul>
+            <li>
+                <a href="#"> <img src="~/Asset/images/bigsale.png" alt="Img" height="170" width="190"><br>Perfume Sale</a>
+            </li>
+            <li>
+                <a href="#"> <img src="~/Asset/images/daisy3.jpg" alt="Img" height="175" width="190"><br>Daisy Dream MJ Kiss</a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Asset/images/bvlllll.jpg" alt="Img" height="170" width="195"><br> BVL Rose Goldea
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="box1" style="background-color: white">
+        <h2>Make up</h2>
+        <ul>
+            <li>
+                <a href="#"> <img src="~/Asset/images/Mac2.jpg" alt="Img" height="111" width="150"><br>Mac Cosmetics</a>
+            </li>
+            <li>
+                <a href="#"> <img src="~/Asset/images/PhanMac.jpg" alt="Img" height="111" width="150"><br>Prep + Prime Transparent Finishing Powder/Pressed</a>
+            </li>
+            <li>
+                <a href="#"> <img src="~/Asset/images/macccc2.jpg" alt="Img" height="111" width="150"><br> MAC Limited</a>
+            </li>
+        </ul>
+    </div>
+</div>

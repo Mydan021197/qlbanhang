@@ -1,0 +1,122 @@
+﻿
+<style type="text/css">
+    #Datmua a {
+        clear: both;
+        background-color: red;
+        color: white;
+        width: 120px;
+        height: 35px;
+        display: block;
+        float: right;
+        text-align: center;
+        padding-top: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        #Datmua a:hover {
+            background-color: gray;
+            color: red;
+        }
+</style>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutTrangChu.cshtml";
+}
+<div id="main" style=" margin-top:40px" >
+    <div style="width:40% ; float:left ;border-left:dotted 1px;border-color:azure; padding-left: 100px">
+        <img src="~/Asset/images/@Model.HinhAnh" width="300" />
+    </div>
+
+    <div style="width:60%;float:left;padding-left:100px">
+        <h4 style="font-weight:bold;color:#451919"> @Model.tensp </h4>
+        <ul class="border-bottom">
+            <li><span> Nhãn hiệu</span>: <span>  @ViewBag.HieuSP </span></li>
+            <li><span> Giới tính</span>: <span> @ViewBag.Gioitinh </span></li>
+            <li><span> Dung lượng</span> :<span> @ViewBag.Dungluong </span></li>
+            <li><span> Nồng Độ </span> :<span> @ViewBag.Nongdo </span></li>
+        </ul>
+        <p style="text-align:justify"><span style="font-weight:bold">Mô tả: </span>@Model.mota</p>
+        <p style="font-weight:bold">Giá bán: @Model.GiaBan VND</p>
+        @if (Model.SLTon == 0)
+    {
+        <p style="font-weight:100">Sản Phẩm hiện tại đã "HẾT HÀNG ". </p>
+}
+else
+{
+    <p style="font-weight:100">Số Lượng: @Model.SLTon </p>
+    <a href="@Url.Action("Themgiohang","GioHang",new { @idSP = Model.Id, @strURL = Request.Url.ToString() })" class="btnCart">Order Now</a>
+    
+
+}
+
+    </div>
+
+
+
+</div>
+
+<div id="sidebar">
+    <div class="news">
+        <ul>
+            <li>
+                <a href="@Url.Action("BestSeller","TrangChu")"> <img src="~/Asset/images/bigsale.png" alt="Img" height="170" width="190"><br>Perfume Sale</a>
+            </li>
+            <li>
+                <a href="@Url.Action("sanpham1","TrangChu")"> <img src="~/Asset/images/daisy3.jpg" alt="Img" height="175" width="190"><br>Daisy Dream MJ Kiss</a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="~/Asset/images/MAC-lipstick.jpg" alt="Img" height="170" width="195"><br>Mac Lipstick
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<p>
+    <br/>
+</p>
+<div id="main_4" style="padding-left: 30px;">
+    <h2 class="product-title">Một số Nước Hoa khác ----------------------------------------- <br></h2>
+    <div id="items" style="padding-left: 40px;">
+        <ul>
+            <li class="box">
+                <a href="#"><img src=" ~/Asset/images/Jomallon2.jpg" alt="Img" height="190" width="190"></a>
+                <h4> RED ROSES</h4>
+                <span>2.250.000VND</span>
+
+                <a href="cart.html" class="btnCart">Order Now</a>
+            </li>
+            <li class="box">
+                <a href="#"><img src="~/Asset/images/nar2.jpg" alt="Img" height="190" width="190"></a>
+                <h4> Narciso Poudree 90 ml</h4>
+                <span>2.250.000VND</span>
+
+                <a href="@Url.Action("GioHang","GioHang")" class="btnCart">Order Now</a>
+            </li>
+
+            <li class="box">
+                <a href="Perfume.html"><img src="~/Asset/images/V602790-700x850.jpg" alt="Img" height="190" width="190"></a>
+                <h4> Very Sexy Now 2017 50ml</h4>
+                <span>1.250.000VND</span>
+
+                <a href="@Url.Action("GioHang","GioHang")" class="btnCart">Order Now</a>
+            </li>
+           
+            <li class="box">
+                <a href="#"><img src="~/Asset/images/22222.jpg" alt="Img" height="190" width="190"></a>
+                <h4>Fleur Musc For Her 2017</h4>
+                <span>2.500.000 VND</span>
+
+                <a href="@Url.Action("GioHang","GioHang")" class="btnCart">Order Now</a>
+            </li>
+            <li class="box">
+                <a href="#"><img src="~/Asset/images/Jomallon2.jpg" alt="Img" height="190" width="190"></a>
+                <h4> RED ROSES</h4>
+                <span>2.250.000VND</span>
+
+                <a href="@Url.Action("GioHang","GioHang")" class="btnCart">Order Now</a>
+            </li>
+        </ul>
+</div>
+</div>

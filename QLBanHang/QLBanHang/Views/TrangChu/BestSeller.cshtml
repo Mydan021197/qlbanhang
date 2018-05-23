@@ -1,0 +1,70 @@
+﻿@model IEnumerable<QLBanHang.Models.SanPham>
+@{
+    ViewBag.Title = "BestSeller";
+    Layout = "~/Views/Shared/_LayoutTrangChu.cshtml";
+}
+
+<style>
+
+    #items .box1 {
+        width: 250px;
+    }
+</style>
+<p>
+    <br />
+</p>
+
+    <div id="contents" style="background-color: #ffe0e0 ; padding-top: 20px ">
+        <div id="main_3" style="background-color: #ffe0e0">
+            <div id="items">
+
+       
+            <ul style="width: 1300px">
+            @foreach (var nuochoa in Model)
+            {
+                <li class="box1" style="border:double">
+                    <a href="@Url.Action("Details","TrangChu", new { id = nuochoa.Id }) " style="text-decoration: none">
+                        <img src="~/Asset/images/@nuochoa.HinhAnh" alt="Img" height="200" width="210" style="padding-left:20px; padding-top:10px">
+                        <h4 style="padding-left:20px">@nuochoa.tensp</h4>
+
+                        <span class="price" style="padding-left:60px; color: black"> @nuochoa.GiaBan VND</span>
+                    </a>
+
+                    <a class="btnCart" href="@Url.Action("Themgiohang","GioHang",new { @idSP = nuochoa.Id, @strURL = Request.Url.ToString()})">Order Now</a>
+
+
+                </li>
+            }
+            </ul>
+            </div>
+        </div>
+    </div>
+@*<Script language="javascript" type="text/javascript">
+        function TaoDuLieu() {
+
+            var rst;
+            var connection;
+            var sql;
+
+            var rst = new ActiveXObject("ADODB.Recordset");
+            var connection = new ActiveXObject("ADODB.Connection");
+
+            connection.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=LAPTOP-V864UBJI\SQLEXPRESS;Initial Catalog=QLBanHang;Integrated Security=True");
+            sql = "Select * from sanpham";
+            rst.Open(sql, connection);
+            var str = "<table border = '0' cellspacing='0'>";
+            while (!rst.EOF) {
+                str = str + "<div id='script1'>";
+                str = str + "<th id ='cho'><img src=" + rst(5) + " width='190' height='190'>";
+                str = str + "  Tên Sản phẫm : " + rst(1) + "<br>";
+                str = str + "  Đơn giá : " + rst(4) + " đồng" + "</th>";
+                str = str + "</div>";
+
+                rst.moveNext();
+            }
+            str = str + "</table>";
+            document.getElementById("vi").innerHTML = str;
+            rst.Close();
+        }
+
+    </Script>*@	

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<QLBanHang.Areas.QuanLy.Models.DatHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/QuanLy/Views/Shared/_LayoutAdmin.cshtml";
+}
+    <table id="table_id" class="table" border="1">
+        <thead>
+            <tr style="background-color:#f8dfdf">
+                <th width="200px">
+                    Tên Khách Hàng
+                </th>
+                <th width="200px">
+                    Ngày Đặt Hàng
+                </th>
+                <th width="150px">
+                    Tổng Tiền
+                </th>
+                <th width="200px">
+                    Ngày Giao Hàng
+                </th>
+                <th width="200px">
+                    Địa Chỉ Giao Hàng
+                </th>
+                <th width="100px">
+                    Trạng Thái
+                </th>
+                <th width="150px">
+                    Nhân Viên
+                </th>
+                <th width="250px"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhachHang.Hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayMua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiachiGiaoHang)
+            </td>
+            <td style="width: 200px">
+                @if (item.TrangThai == 0)
+        {
+            <p>Chưa Duyệt</p>
+}
+                @if (item.TrangThai == 1)
+        {
+            <p>Đang Giao </p>
+}
+                @if (item.TrangThai == 2)
+        {
+            <p> Đã Giao </p>
+}
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNV)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "CTdathang", new { id = item.Id })
+            </td>
+        </tr>
+}
+        </tbody>
+                    </table>
+             

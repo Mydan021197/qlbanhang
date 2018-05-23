@@ -1,0 +1,90 @@
+﻿@using QLBanHang.Models;
+@model List<GioHang>
+    @{
+        ViewBag.Title = "GioHang";
+        Layout = "~/Views/Shared/_LayoutTrangChu.cshtml";
+    }
+    <h2 style="text-align: center"> Giỏ Hàng </h2>
+    <div id="main_3">
+        <div action="index.html" method="post" id="cart">
+
+            <a href="@Url.Action("DatHang", "GioHang")" class="btnCart" style="margin-right:0px;margin-top:-22px">Thanh Toán</a>
+            <p>
+                <br/>
+            </p>
+            <table>
+                <thead>
+                    <tr style="height:30px">
+                        <th style=" background-color: #f7dbdb; color: black">Sản Phẩm</th>
+                        <th style=" background-color: #f7dbdb; color: black">Giá</th>
+                        <th style=" background-color: #f7dbdb; color: black">Sale</th>
+                        <th style=" background-color: #f7dbdb; color: black; width:50px">Số Lượng</th>
+                        <th class="last-child" style=" background-color: #f7dbdb; color: black">Thành Tiền </th>
+                        <th style=" background-color: #f7dbdb; color: black; width:50px"></th>
+                        <th style=" background-color: #f7dbdb; color: black; width:50px"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            <div class="frame">
+                                <img src="~/Asset/images/@item.hinhsp" alt="Img" height="90" width="80">
+                            </div>
+                            <span class="title">Perfume</span>
+
+                            <p>
+                                <br />
+                                @item.tenSp
+                            </p>
+                        </td>
+
+                        <td>@String.Format("{0:0,0}", @item.gia)</td>
+                        <td>@item.sale %</td>
+                        @using (Html.BeginForm("Capnhatgiohang", "GioHang", new { @iMasp = item.idSP }))
+                    {
+                     <td>
+                        <input type="number" min="1" name="txtSoluong" value="@item.soLuong" style="background-color:#f7dbdb; width: 50px" />
+                    </td>
+                    <td><span class="total">@String.Format("{0:0,0}", @item.sthanhtien)</span></td>
+
+                    <td ><a style="text-decoration:none" href="@Url.Action("XoaGiohang","GioHang",  new { @idSP = item.idSP })"> Xóa </a> </td>
+
+                   // <td style="text-decoration:none "> @Html.ActionLink("Xóa", "XoaGiohang", new { @idSP = item.idSP }) </td>
+                    <td><input type="submit" value="Cập nhật" style="background-color: #f7dbdb"/> </td>
+
+                    }
+                    </tr>  
+
+                    }
+                </tbody>
+                <tfoot>
+              
+                    <tr>
+                        <td colspan="4" style=" background-color: #f7dbdb; color: black">Subtotal:</td>
+                        <td colspan="4" style=" background-color: #f7dbdb; color: black">@String.Format("{0:0,0}", ViewBag.Sum) VND</td>
+                    </tr>
+
+
+
+                </tfoot>
+            </table>
+            <div style=" padding-top:20px">
+                <p>
+                    
+                </p>
+                <a href="@Url.Action("XoatatcaGioHang", "GioHang")" class="btnCart" style="margin-right:0px;margin-top:-24px"> Hủy</a>
+                <br />
+                <div style="margin-left:0px;margin-top:-24px">
+                    <a style="text-decoration: none" href="@Url.Action("Perfume","TrangChu")"> Tiếp Tục Mua ... </a>
+                </div>
+            </div>
+        </div>
+      
+
+
+    </div>
+
+

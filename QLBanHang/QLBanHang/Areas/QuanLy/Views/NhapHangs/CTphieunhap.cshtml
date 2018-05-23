@@ -1,0 +1,64 @@
+﻿
+@model QLBanHang.Areas.QuanLy.Models.ChiTietPhieuLoad
+@{
+    ViewBag.Title = "CTphieunhap";
+    Layout = "~/Areas/QuanLy/Views/Shared/_LayoutAdmin.cshtml";
+}
+@Html.HiddenFor(model => model.phieunhap.id)
+
+<div class="col-lg-12">
+    @Html.ActionLink("Thêm Sản Phẩm", "CreateNhapHang", new { id = Model.phieunhap.id })
+    @Html.HiddenFor(Model => Model.phieunhap.IdNPP)
+    <p>
+        <br />
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <tr style="background-color:#dbf8ff">
+                <th>
+                    ID Phiếu Nhập
+                </th>
+                <th>
+                    Tên Sản Phẩm
+                </th>
+                <th>
+                    Giá Nhập
+                </th>
+                <th>
+                    Giá Bán
+                </th>
+                <th>
+                    Số Lượng Nhập
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.dsPhieu)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdPN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SanPham.tensp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaNhap)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaBan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SLNhap)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QLBanHang.Areas.QuanLy.Models.Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/QuanLy/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Admins")
+</p>
+<table class="table" border="1">
+    <tr style="background-color:#fbe1e1">
+        <th style="width: 150px ">
+                        UserName
+                    </th>
+                    <th style="width: 150px ">
+                        Pass
+                    </th>
+                    <th style="width: 150px ">
+                        Họ & Tên
+                    </th>
+
+                    <th style="width: 150px ">
+                        Chức Vụ
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pass)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HoTen)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MoTa)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                        </td>
+                    </tr>
+                }
+
+            </table>

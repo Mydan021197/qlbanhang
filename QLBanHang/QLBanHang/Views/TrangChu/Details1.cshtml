@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Details1";
+    Layout = "~/Views/Shared/_LayoutTrangChu.cshtml";
+}
+
+<style type="text/css">
+    #Datmua a {
+        clear: both;
+        background-color: red;
+        color: white;
+        width: 120px;
+        height: 35px;
+        display: block;
+        float: right;
+        text-align: center;
+        padding-top: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        #Datmua a:hover {
+            background-color: gray;
+            color: red;
+        }
+</style>
+
+<div id="main">
+    <h3 class="product-title"> @Model.tensp </h3>
+    
+    <img src="~/Asset/images/@Model.HinhAnh" width="300" />
+
+    <div id="sidebar_1">
+
+        <div class="news">
+            <div class="product-body-text col-sm-7">
+                <ul class="border-bottom">
+                    <li><span> + Nhãn hiệu</span>: <span>  @Model.NhanHieu.TenHieu </span></li>
+                    <li><span> + Giới tính</span>: <span> </span></li>
+                    <li>
+                        <span> + Nồng độ</span>: <span>
+                        
+                        </span>
+                    </li>
+
+                    <li><span> + Dung lượng</span> : <span> </span></li>
+
+                    <li><span> + Dung lượng</span> :<span> </span></li>
+                </ul>
+                <p class="color-main"><strong>Hương đặc trưng</strong></p>
+                <p>
+                    <span>
+                       
+                    </span>
+                </p>
+
+                <span class="price">Price :@Model.GiaBan VND</span><br>
+
+            </div>
+        </div>
+        <a href="@Url.Action("Themgiohang","GioHang",new { @idSP = Model.Id, @strURL = Request.Url.ToString() })" class="btnCart">Order Now</a>
+
+    </div>
+ </div>
+
+            @*<div style="width:40% ; float:left ;border-left:dotted 1px;border-color:azure; padding-left: 100px">
+                    <img src="~/Asset/images/@Model.HinhAnh" width="300" />
+                </div>
+
+                <div style="width:60%;float:left;padding-left:100px">
+                    <h4 style="font-weight:bold;color:#451919"> @Model.tensp </h4>
+
+                    <p style="text-align:justify"><span style="font-weight:bold">Mô tả: </span>@Model.mota</p>
+                    <p style="font-weight:bold">Giá bán: @Model.GiaBan VND</p>
+                    <a href="@Url.Action("Themgiohang","GioHang",new { @idSP = Model.Id, @strURL = Request.Url.ToString() })" class="btnCart">Order Now</a>
+
+                </div>*@
+
+
+
+

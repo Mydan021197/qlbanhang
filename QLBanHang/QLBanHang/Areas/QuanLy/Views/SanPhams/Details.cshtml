@@ -1,0 +1,109 @@
+﻿@model QLBanHang.Models.SanPham
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/QuanLy/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>Details</h2>
+
+<div>
+    <h4>SanPham</h4>
+    <hr />
+    <dl class="dl-horizontal" style="border:double">
+        <dt>
+            Hiệu :
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NhanHieu.TenHieu)
+        </dd>
+
+        <dt>
+            Dung Lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DungLuong.DungTich)
+        </dd>
+
+        <dt>
+            Nồng Độ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NongDo.nongdo1)
+        </dd>
+
+        <dt>
+            Tên :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tensp)
+        </dd>
+
+        <dt>
+            Giới Tính :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiTinh.GioiTinh1)
+        </dd>
+
+        <dt>
+            Đơn Vị Tính
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dvt)
+        </dd>
+
+        <dt>
+            Giá :
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.GiaBan) VND
+        </dd>
+
+        <dt>
+            Hình Ảnh :
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/Asset/images/" + Model.HinhAnh)" style="width:200px; height: 250px" />
+
+        </dd>
+
+        <dt>
+            Mô tả :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mota)
+        </dd>
+
+        <dt>
+            Sale :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sale)
+        </dd>
+
+        <dt>
+            Số Lượng Tồn :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLTon)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

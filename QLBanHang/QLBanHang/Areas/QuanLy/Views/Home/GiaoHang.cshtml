@@ -1,0 +1,66 @@
+﻿@model IEnumerable<QLBanHang.Areas.QuanLy.Models.DatHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/QuanLy/Views/Shared/_LayoutAdmin.cshtml";
+}
+<p>
+    <br />
+</p>
+
+<table class="table" border="1">
+    <tr style="background-color:#f8dfdf">
+        <th width="200px">
+            Tên Khách Hàng
+        </th>
+        <th width="200px">
+            Ngày Đặt Hàng
+        </th>
+        <th width="150px">
+            Tổng Tiền
+        </th>
+        <th width="200px">
+            Ngày Giao Hàng
+        </th>
+        <th width="200px">
+            Địa Chỉ Giao Hàng
+        </th>
+   
+        <th width="150px">
+            Nhân Viên
+        </th>
+        <th width="250px"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhachHang.Hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayMua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiachiGiaoHang)
+            </td>
+        
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNV)
+            </td>
+            <td>
+                @Html.ActionLink("Duyệt", "Duyet", new { id = item.Id }) |
+
+                @Html.ActionLink("Hủy", "XoaDH", new { id = item.Id })
+
+            </td>
+        </tr>
+    }
+
+</table>

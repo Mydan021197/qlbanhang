@@ -1,0 +1,118 @@
+﻿@model QLBanHang.Areas.QuanLy.Models.NhapHang
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/QuanLy/Views/Shared/_LayoutAdmin.cshtml";
+}
+@using (Html.BeginForm("CreateNhapHang", "NhapHangs", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(Model => Model.idPN)
+    <h4> ID Phiếu Nhập : @Html.DisplayFor(model => model.idPN) </h4>
+
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div class="form-group">
+                <h4>Nhập Thông tin Sản Phẩm</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Nhãn Hiệu </label>
+                    @Html.DropDownList("nhanhieuu", null, htmlAttributes: new { @class = "form-control" })
+
+                </div>
+                <p class="help-block"></p>
+
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Tên Sản Phẩm </label>
+
+                    @Html.EditorFor(model => model.tensp, new { htmlAttributes = new { @class = "form-control", @required = "" } })
+                    @Html.ValidationMessageFor(model => model.tensp, "", new { @class = "text-danger" })
+                </div>
+                <p class="help-block"></p>
+
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Đơn Vị Tính </label>
+                    @Html.EditorFor(model => model.dvt, new { htmlAttributes = new { @class = "form-control", @required = "" } })
+                    @Html.ValidationMessageFor(model => model.dvt, "", new { @class = "text-danger" })
+                </div>
+
+                <p class="help-block"></p>
+
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Giới Tính</label>
+                    @Html.DropDownList("gioitinhh", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <p class="help-block"></p>
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Dung Lượng </label>
+                    @Html.DropDownList("dungluong", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <p class="help-block"></p>
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Nồng Độ</label>
+                    @Html.DropDownList("nongdoo", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <p class="help-block"></p>
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Hình Ảnh </label>
+                    <input type="file" name="fileupload" />
+                    @ViewBag.Thongbao
+
+                </div>
+
+                <p class="help-block"></p>
+
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Mô tả </label>
+                    @Html.EditorFor(model => model.mota, new { htmlAttributes = new { @class = "form-control", @required = "" } })
+                    @Html.ValidationMessageFor(model => model.mota, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+
+            <div class="form-group">
+                <h4>Thông Tin Nhà Phân Phối</h4>
+                <hr />
+
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Nhân Viên </label>
+                    @Html.DropDownList("nhanvien", null, htmlAttributes: new { @class = "form-control" })
+
+                </div>
+              
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess">Giá Nhập </label>
+                    @Html.EditorFor(model => model.gianhap, new { htmlAttributes = new { @class = "form-control", @required = "" } })
+                    @Html.ValidationMessageFor(model => model.gianhap, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess"> Só Lượng </label>
+                    @Html.EditorFor(model => model.soluong, new { htmlAttributes = new { @class = "form-control", @required = "" } })
+                    @Html.ValidationMessageFor(model => model.soluong, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-12">
+            ------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

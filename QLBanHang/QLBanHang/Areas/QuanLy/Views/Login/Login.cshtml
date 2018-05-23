@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+    <link href="~/Areas/QuanLy/css/login.css" rel="stylesheet" />
+  
+    <script src="~/Areas/QuanLy/css/login.js"></script>
+</head>
+<body>
+    <div id="idTest" class="container" onchange="getID()">
+        <section id="content">
+            @using (Html.BeginForm())
+            {@Html.ValidationSummary(true)
+            <form action="">
+                <h1> Login Form </h1>
+                <h5 style=" color: red"> @ViewBag.ThongBao </h5>
+                <div>
+                    <input type="text" name="username" placeholder="Username" required="" id="username" value="cname" />
+                    @ViewData["Loi1"]
+                </div>
+                <div>
+                    <input type="password" name="pass" placeholder="Password" required="" id="password" value="cvalue" />
+                    @ViewData["Loi2"]
+                </div>
+                <div>
+                    <input type="submit" value="Log in" />
+                    <a href="#">Lost your password?</a>
+                    <a href="#">Register</a>
+                </div>
+            </form><!-- form -->
+        }
+            <div class="button">
+                <a href="#"> _M.a.n.d.y.S.t.o.r.e_ </a>
+            </div><!-- button -->
+
+        </section><!-- content -->
+    </div><!-- container -->
+</body>
+</html>
+

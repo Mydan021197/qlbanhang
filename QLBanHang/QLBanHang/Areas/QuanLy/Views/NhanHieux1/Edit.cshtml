@@ -1,0 +1,37 @@
+﻿@model QLBanHang.Areas.QuanLy.Models.NhanHieu
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/QuanLy/Views/Shared/_LayoutAdmin.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="row">
+        <div class="col-lg-8">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group has-feedback">
+                <label class="control-label" for="inputSuccess"> Nhãn Hiệu : </label>
+
+                @Html.EditorFor(model => model.TenHieu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenHieu, "", new { @class = "text-danger" })
+            </div>
+    
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+  </div>
+        }
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
